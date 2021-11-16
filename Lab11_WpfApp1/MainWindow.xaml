@@ -1,0 +1,39 @@
+﻿<Window x:Class="Lab11_WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab11_WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="400">
+    <Window.Resources>
+        <EllipseGeometry x:Key="ellipse1"
+                         Center="200 200"
+                         RadiusX="100"
+                         RadiusY="100"/>
+        <EllipseGeometry x:Key="ellipse2"
+                         Center="200 200"
+                         RadiusX="75"
+                         RadiusY="75"/>
+    </Window.Resources>
+    <Grid>
+        <Path Fill="red" Stroke="red" StrokeThickness="3">
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Xor"
+                   Geometry1="{StaticResource ellipse1}"
+                   Geometry2="{StaticResource ellipse2}"/>
+            </Path.Data>
+        </Path>
+        <Path Fill="red" Stroke="red" StrokeThickness="3">
+            <Path.Data>
+            <PathGeometry>
+            <PathFigure StartPoint="270,160" IsClosed="True">
+                <LineSegment Point="120,220" />
+                <LineSegment Point="120,240" />
+                <LineSegment Point="280,180" />
+            </PathFigure>
+            </PathGeometry>
+                </Path.Data>
+        </Path>
+    </Grid>
+</Window>
